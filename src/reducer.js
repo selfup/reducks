@@ -2,10 +2,10 @@ import Lspi from 'lspi'
 
 const lspi = new Lspi()
 
-const storeChanger = (state={data: []}, action) => {
+const storeChanger = (state, action) => {
   let data = lspi.getRecord("data")
-  console.log(data)
-  if (data === null || data === undefined) {
+  
+  if (!data) {
     lspi.createEmptyRecordArray("data")
     data = []
   }
