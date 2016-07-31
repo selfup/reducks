@@ -2,7 +2,7 @@ import Lspi from 'lspi'
 
 const lspi = new Lspi()
 
-const storeChanger = (state, action) => {
+const dataChanger = (state, action) => {
   let data = lspi.getRecord("data")
   
   if (!data) {
@@ -27,4 +27,4 @@ const storeChanger = (state, action) => {
   }
 }
 
-export default storeChanger
+export default dataChanger
