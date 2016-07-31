@@ -1,12 +1,25 @@
-const fooReducer = (state={foo: 'default value'}, action) => {
+import Lspi from 'lspi'
+
+const lspi = new Lspi()
+
+const storeChanger = (state={data: []}, action) => {
+  let data = lspi.getRecord("data")
   switch (action.type) {
     case 'WOW':
-      return {...state, foo: 'WOW'}
+      data.unshift("wow")
+      lspi.setRecord("data", data)
+      return {...state, data: data}
     case 'OK':
-      return {...state, foo: 'OK'}
+      data.unshift("ok")
+      lspi.setRecord("data", data)
+      return {...state, data: data}
+    case 'CLEAR':
+      lspi.setRecord("data", [])
+      return {...state, data: []}
     default:
-      return state
+      if (!data) data = lspi.createEmptyRecordArray("data")
+      return {...state, data: data}
   }
 }
 
-export default fooReducer
+export default storeChanger

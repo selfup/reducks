@@ -1,20 +1,34 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import Data from './Data'
 
 class App extends Component {
   render() {
     return (
       <div >
-        <button onClick={() => this.props.dispatch({type: 'WOW'})}>Make it WOW</button>
-        <button onClick={() => this.props.dispatch({type: 'OK'})}>Make it OK</button>
+        <button 
+          onClick={() => this.props.dispatch({type: 'WOW'})}
+        >
+        Add wow
+        </button>
+        <button 
+          onClick={() => this.props.dispatch({type: 'OK'})}
+        >
+        Add ok
+        </button>
+        <button 
+          onClick={() => this.props.dispatch({type: 'CLEAR'})}
+        >
+        Clear all of the Data!
+        </button>
         <br/><br/>
-        {this.props.foo}
+        <Data data={this.props.data} />
       </div>
-    );
+    )
   }
 }
 
-const mapStateToProps = (state) => ({foo: state.foo})
+const mapStateToProps = (state) => ({data: state.data})
 
 const mapDispatchToProps = (dispatch) => ({dispatch: dispatch})
 

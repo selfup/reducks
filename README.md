@@ -2,7 +2,11 @@
 
 `npm install && npm start`
 
-Click the buttons, watch things happen. Read the code.
+Click the buttons, watch things happen. 
+
+Refresh a few times.
+
+Read the code.
 
 Enjoy the code.
 
