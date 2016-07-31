@@ -4,7 +4,7 @@
 
 Click the buttons, watch things happen. 
 
-Refresh a few times.
+Refresh a few times when there is data.
 
 Read the code.
 
